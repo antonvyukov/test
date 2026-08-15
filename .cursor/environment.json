@@ -1,15 +1,11 @@
 {
   "name": "PHP web app",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
-  "user": "ubuntu",
-  "install": "php --version",
+  "install": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends php-cli php-curl",
   "terminals": [
     {
       "name": "php-server",
-      "command": "php -S 0.0.0.0:8000 -t ."
+      "command": "php -S 0.0.0.0:8000 -t .",
+      "description": "PHP built-in dev server serving the app root on port 8000."
     }
   ],
   "ports": [{ "name": "web server", "port": 8000 }]
