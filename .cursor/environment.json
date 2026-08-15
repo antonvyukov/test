@@ -1,0 +1,16 @@
+{
+  "name": "PHP web app",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "user": "ubuntu",
+  "install": "php --version",
+  "terminals": [
+    {
+      "name": "php-server",
+      "command": "php -S 0.0.0.0:8000 -t ."
+    }
+  ],
+  "ports": [{ "name": "web server", "port": 8000 }]
+}
