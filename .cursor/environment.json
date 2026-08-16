@@ -1,12 +1,12 @@
 {
-  "name": "PHP web app",
-  "install": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends php-cli php-curl",
+  "name": "Laravel + Filament",
+  "install": "bash .cursor/install.sh",
   "terminals": [
     {
-      "name": "php-server",
-      "command": "php -S 0.0.0.0:8000 -t .",
-      "description": "PHP built-in dev server serving the app root on port 8000."
+      "name": "laravel",
+      "command": "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=8000",
+      "description": "Applies migrations, seeds the dev admin user, then serves the app. Laravel at :8000, Filament admin at /admin (admin@example.com / password)."
     }
   ],
-  "ports": [{ "name": "web server", "port": 8000 }]
+  "ports": [{ "name": "web", "port": 8000 }]
 }
