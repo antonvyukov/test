@@ -1,0 +1,12 @@
+{
+  "name": "Laravel + Filament",
+  "install": "bash .cursor/install.sh",
+  "terminals": [
+    {
+      "name": "laravel",
+      "command": "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=8000",
+      "description": "Applies migrations, seeds the dev admin user, then serves the app. Laravel at :8000, Filament admin at /admin (admin@example.com / password)."
+    }
+  ],
+  "ports": [{ "name": "web", "port": 8000 }]
+}
