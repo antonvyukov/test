@@ -225,7 +225,8 @@ class PRU_Http {
 		}
 		$scheme = $parts['scheme'] ?? 'https';
 		$path   = $parts['path'] ?? '/';
-		return $scheme . '://' . $parts['host'] . $path;
+		$port   = isset( $parts['port'] ) ? ':' . (int) $parts['port'] : '';
+		return $scheme . '://' . $parts['host'] . $port . $path;
 	}
 
 	/**

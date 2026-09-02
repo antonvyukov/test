@@ -274,6 +274,10 @@ check(
 
 $rel = PRU_Http::redact_url( 'https://api.github.com/repos/a/b?token=SECRET' );
 check( 'redact_url strips query', $rel === 'https://api.github.com/repos/a/b' );
+check(
+	'redact_url keeps non-default port',
+	PRU_Http::redact_url( 'http://127.0.0.1:8091/api/v3/repos/a/b?token=SECRET' ) === 'http://127.0.0.1:8091/api/v3/repos/a/b'
+);
 
 $cipher = PRU_Sources::encrypt( 'super-secret-token' );
 check( 'encrypt is not plaintext', $cipher !== '' && $cipher !== 'super-secret-token' );
