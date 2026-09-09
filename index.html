@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>design.md — генератор дизайн-системы</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23e8d5b0' width='32' height='32'/%3E%3Ctext x='6' y='23' font-size='16' font-family='Georgia' fill='%2312110f'%3Ed%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Karla:wght@400;600&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Outfit:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <strong>design.md</strong>
+          <span>дерево тегов → система → превью блоков</span>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost" type="button" id="btn-random">Случайно</button>
+          <button class="ghost" type="button" id="btn-reset">Сброс</button>
+        </div>
+      </header>
+      <main class="layout">
+        <section class="pane pane-tree" data-tree>
+          <p class="hint-line">
+            Водите курсором по тегам — превью меняется сразу. Клик фиксирует положение.
+            Пунктир — значение из настроения, заливка — ваш выбор.
+          </p>
+          <div id="tree"></div>
+        </section>
+        <section class="pane pane-preview">
+          <div class="preview-bar">
+            <div>Превью · <b id="preview-name">ATELIER Noir</b></div>
+            <div id="preview-hover">наведите тег, чтобы примерять</div>
+          </div>
+          <div class="preview-viewport" id="preview-viewport">
+            <div class="preview-stage">
+              <div class="browser" id="browser">
+                <div class="browser-chrome">
+                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                  <div class="browser-url" id="browser-url">atelier.site</div>
+                </div>
+                <div class="page" id="page"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pane pane-md">
+          <div class="md-bar">
+            <h2>design.md</h2>
+            <div class="topbar-actions">
+              <button class="ghost" type="button" id="btn-copy">Копировать</button>
+              <button class="ghost" type="button" id="btn-download">Скачать</button>
+            </div>
+          </div>
+          <pre class="md-out" id="markdown"></pre>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

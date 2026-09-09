@@ -1,0 +1,8 @@
+{
+  "name": "design-md-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/self-check.mjs"
+  }
+}
